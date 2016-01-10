@@ -68,12 +68,11 @@ angular.module('myApp', ['ngRoute', 'formly'])
     })
     .controller('contactController', function($scope) {
         var cr = this;
-        cr.user = {};
+        cr.model = {};
         cr.userData = [{
             key: 'fullName',
             type: 'input',
             templateOptions: {
-                type: 'text',
                 label: 'Nombre completo',
                 placeholder: 'Escribe tu nombre completo'
             }
