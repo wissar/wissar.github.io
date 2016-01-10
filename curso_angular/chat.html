@@ -4,7 +4,14 @@
 	<meta charset="UTF-8">
 	<title>ChatRoulette</title>
 	<link rel="stylesheet" href="bower_components/lumx/dist/lumx.css">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+	<style type="text/css">
+		.messages {
+			height: 200px;
+			color: black;
+			padding: 10px;
+		}
+	</style>
 </head>
 <body ng-controller="ctrlChat" class="card bgc-blue-grey-900">
 
@@ -32,7 +39,7 @@
 			</lx-text-field>
 		</div>
 		<div flex-item>
-			<button class="btn btn--s btn--blue btn--raiser" lx-ripple ng-click="sendMessage()">Enviar</button>
+			<button class="btn btn--s btn--blue btn--raised" lx-ripple ng-click="sendMessage()">Enviar</button>
 		</div>
 	</div>
 	
