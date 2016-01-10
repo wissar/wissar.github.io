@@ -6,7 +6,6 @@ angular.module('myApp', ['lumx', 'firebase'])
         $scope.sendMessage = function() {
             if ($scope.user.message) {
             	var user = $scope.user.name || 'Piter la anguila';
-            	var message = 
                 $scope.messages.$add({
                     from: user,
                     body: $scope.user.message
