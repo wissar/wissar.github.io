@@ -5,10 +5,13 @@ angular.module('myApp', ['lumx', 'firebase'])
         console.log($scope.messages);
         $scope.sendMessage = function() {
             if ($scope.user.message) {
+            	var user = $scope.user.name || 'Piter la anguila';
+            	var message = 
                 $scope.messages.$add({
-                    from: $scope.user.name,
+                    from: user
                     body: $scope.user.message
                 });
             }
+            $scope.user.message = '';
         }
     })
