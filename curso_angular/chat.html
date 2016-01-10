@@ -7,9 +7,10 @@
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<style type="text/css">
 		.messages {
-			height: 200px;
+			max-height: 200px;
 			color: black;
 			padding: 10px;
+			overflow: scroll;
 		}
 	</style>
 </head>
@@ -27,7 +28,6 @@
 			<span class="fs-tittle display-block mdi mdi-facebook-messenger"></span><b>Mensajes</b>
 			<div class="messages p+ bgc-blue-grey-200">
 				<div ng-repeat="message in messages">
-				{{ message }}
 					{{ message.from}} : {{ message.body}}
 				</div>
 			</div>
