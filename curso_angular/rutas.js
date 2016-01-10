@@ -46,13 +46,13 @@ angular.module('myApp', ['ngRoute', 'formly', 'formlyBootstrap'])
         }, function(error) {
             console.log(error);
         })
-        result.alert = function(){
+        result.alert = function() {
             alert('Kappita');
         }
         return result;
 
     })
-    .directive('buttonAlert', function () {
+    .directive('buttonAlert', function() {
         return {
             restrict: 'A',
             replace: true,
@@ -76,20 +76,18 @@ angular.module('myApp', ['ngRoute', 'formly', 'formlyBootstrap'])
                 type: 'text',
                 label: 'Nombre completo',
                 placeholder: 'Escribe tu nombre completo',
-                required : true
+                required: true
             }
-        },
-        {
+        }, {
             key: 'correo',
             type: 'input',
             templateOptions: {
                 type: 'email',
                 label: 'Correo electrónico',
-                placeholder: 'Escribe tu correo'
-                required : true
+                placeholder: 'Escribe tu correo',
+                required: true
             }
-        },
-        {
+        }, {
             key: 'masInfo',
             type: 'checkbox',
             templateOptions: {
