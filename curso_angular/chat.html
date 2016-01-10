@@ -17,10 +17,10 @@
 	</div>
 	<div class="tc-white-1" flex-container="row">
 		<div flex-item="4" flex-item-order="1">
-			<span class="fs-tittle display-block mdi mdi-facebook-messenger">Mensajes</span>
-			<div class="mensajes p+ bgc-blue-grey-200">
-				<div ng-repeat="msg in mensajes.publicos">
-					{{ msg.from}} : {{ msg.body}}
+			<span class="fs-tittle display-block mdi mdi-facebook-messenger"></span><b>Mensajes</b>
+			<div class="messages p+ bgc-blue-grey-200">
+				<div ng-repeat="message in messages">
+					{{ message.from}} : {{ message.body}}
 				</div>
 			</div>
 		</div>
