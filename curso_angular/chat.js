@@ -18,6 +18,6 @@ angular.module('myApp', ['lumx', 'firebase'])
         	console.log(data);
         	var message = $scope.messages.$getRecord(data.key);
         	console.log(message.from);
-        	LxNotificationService.notify('Mensaje nuevo de: ' + message.from);
+        	LxNotificationService.notify('Mensaje nuevo de: ' + message.from + 'message-processing', false);
         })
     })
