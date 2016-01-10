@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngRoute'])
+angular.module('myApp', ['ngRoute', 'formly'])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -67,7 +67,18 @@ angular.module('myApp', ['ngRoute'])
         $scope.message = 'Aqui va el about';
     })
     .controller('contactController', function($scope) {
-        $scope.message = 'Aqui va el contacto';
+        var cr = this;
+        cr.user = {};
+        cr.userData = [{
+            key: 'fullName',
+            type: 'input',
+            templateOptions: {
+                type: 'text',
+                label: 'Nombre completo',
+                placeholder: 'Escribe tu nombre completo',
+                required: true
+            }
+        }];
     })
     .controller('countriesController', function($scope, $location, countryService) {
         $scope.cities = countryService.Cities;
