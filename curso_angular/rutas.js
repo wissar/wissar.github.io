@@ -11,7 +11,7 @@ angular.module('myApp', ['ngRoute', 'formly'])
             })
             .when('/contact', {
                 templateUrl: 'views/contact.html',
-                controller: 'contactController'
+                controller: 'contactController' as 'cr'
             })
             .when('/countries', {
                 templateUrl: 'views/countries.html',
