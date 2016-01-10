@@ -27,6 +27,8 @@
     "angular": "~1.4.8",
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.6",
-    "foundation": "~5.5.3"
+    "foundation": "~5.5.3",
+    "api-check": "~7.5.5",
+    "angular-formly": "~7.3.9"
   }
 }
