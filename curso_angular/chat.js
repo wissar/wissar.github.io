@@ -8,7 +8,7 @@ angular.module('myApp', ['lumx', 'firebase'])
             	var user = $scope.user.name || 'Piter la anguila';
             	var message = 
                 $scope.messages.$add({
-                    from: user
+                    from: user,
                     body: $scope.user.message
                 });
             }
