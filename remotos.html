@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Directivas</title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="remotos.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/foundation/js/foundation.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="bower_components/foundation/css/foundation.min.css">
+    </script>
+</head>
+
+<body ng-controller="myController">
+    <!-- <ul>
+        <li ng-repeat="city in cities" ng-model="city">Ciudad: {{city.name}} - Capital {{city.capital}}</li>
+    </ul> -->
+    <table class="hover">
+        <thead>
+            <tr>
+                <th>Ciudad</th>
+                <th>Capital</th>
+                <!-- <th width="150">Table Header</th> -->
+                <!-- <th width="150">Table Header</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="city in cities" ng-model="city" ng-click="show(city)">
+                <td>{{city.name}}</td>
+                <td>{{city.capital}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="position: fixed; top: 0; right: 0;">
+    	<b>Ciudad: </b> {{ city.name }} <br>
+    	<b>Subregión: </b> {{ city.subregion }} <br>
+    	<b>Población: </b> {{ city.population }} <br>
+    	<b>Sufijo Tel: </b> {{ city.callingCodes }} <br>
+    	<b>Moneda: </b> {{ city.currencies }} <br>
+    	<b>TimeZone: </b> {{ city.timezones }} <br>
+    </div>
+</body>
+
+</html>

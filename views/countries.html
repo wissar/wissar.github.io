@@ -1,0 +1,21 @@
+<div>
+    <div class="jumbotron text-center">
+        <h1>Países</h1>
+    </div>
+    <div button-alert></div>
+    <div ng-show="loading" class="text-center"><i class="fa fa-spinner fa-pulse fa-5x"></i></div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>País</th>
+                <th>Capital</th>
+            </tr>   
+        </thead>
+        <tbody>
+            <tr ng-repeat="city in cities" ng-model="city" ng-click="showDetail(city)">
+                <td>{{city.name}}</td>
+                <td>{{city.capital}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

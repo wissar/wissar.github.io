@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" ng-controller="myController">
+<head>
+	<meta charset="UTF-8">
+	<title>Directivas</title>
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="directivas.js"></script>
+    <style type="text/css">
+    	.red {
+    		background-color: red;
+    		color: white;
+1    	}
+		.blue {
+			background-color: blue;
+			color: white;
+		}
+		body {
+			background-color: green;
+			color: white;
+		}
+    </style>
+</head>
+<body ng-class="{blue: random > 5000}">
+	<div id="content">
+		<button ng-click="generarRandom()">Generar número</button>
+		<p>{{ random }}</p>
+		<div ng-if="random > 5000" ng-class="{red: random > 5000}">Haz ganado!</div>
+	</div>
+	<div>
+		El link es: {{myLink}}
+		<a href="{{myLink}}">ZELDA</a>
+		<a ng-href="{{myLink}}">ZELDA</a>
+	</div>
+	<div>
+		<input type="checkbox" ng-model="open">
+		<br/>
+		{{open}}
+		<br/>
+		<details ng-open="open">
+			<summary ng-show="open">Este es el detalle</summary>
+		</details>
+		<input type="text" ng-model="inp" value="Este es el dato" ng-readonly="open">
+		<input type="text" value="{{inp}}" ng-readonly="!open">
+	</div>
+	<div>
+		<select ng-model="cities.selectedOption" ng-options="city.name for city in cities.availableOptions track by city.name">
+			<option value="">Elige una ciudad</option>
+			<option value="" ng-selected="true">Otra opcion</option>
+		</select>
+		La ciudad seleccionada es: {{ city.name }}
+	</div>
+
+	<div>
+		<img ng-src="{{ myImage }}">
+	</div>
+
+	<form ng-submit="submit()">
+		<input type="text" ng-model="person.name" name="person.name">
+		<input type="submit" name="person.name" value="Enviar">
+		<code>people = {{ people }}</code>
+		<ul>
+			<li ng-repeat="person in people">{{ person.name }}</li>
+		</ul>
+	
+	</form>
+
+	<div>
+		<p>Ciudades más OP de México:</p>
+		<h3 ng-repeat="city in cities.availableOptions">{{ city.name }}</h3>
+	</div>
+</body>
+</html>

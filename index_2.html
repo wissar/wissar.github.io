@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Angular 101</title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div id="content" ng-controller="ctrlGreetings">
+        {{2+2}}
+        <br/> Hola {{name | uppercase }} {{ 'Anita lava la tina' | lowercase }}
+        <div ng-bind="setLowerCase"></div>
+        <div>{{ 123.42134523091 | number:2 }}</div>
+        <div>{{ 1324 | currency }}</div>
+        <div>{{ 123.42134523091 | number:2 }}</div>
+        <hr/>
+        <div>{{ today | date:'short' }}</div>
+        <div>{{ today | date:'sss' }}</div>
+        <div>{{ today | date:'ww' }}</div>
+        <div>{{ today | date:'longDate' }}</div>
+        <div>{{ today | date:'dd/MM/yyyy hh:mma' }}</div>
+        <input type="text" ng-model="search">
+        <input type="text" ng-model="search2">
+        <hr/>
+        <div>{{ ['lol', 'halo', 'mario', 'galaga', 'doom'] | filter: search }}</div>
+        <!-- <div>{{ [
+					{
+						'name': 'Hugo',
+						'city': 'Paris'
+					},
+					{
+						'name': 'Abdel',
+						'city': 'Tokio'
+					},
+					{
+						'name': 'Rene',
+						'city': 'Sao Paulo'
+					},
+					{
+						'name': 'Oscar',
+						'city': 'Zacatecas'
+					},
+					{
+						'name': 'Daniel',
+						'city': 'Cancún'
+					},
+					{
+						'name': 'Sergio',
+						'city': 'San Francisco'
+					}
+				] | filter: {'name': search, 'city': search2 } }}
+		</div> -->
+        <div>{{ [ { 'name': 'Hugo', 'city': 'Paris' }, { 'name': 'Abdel', 'city': 'Tokio' }, { 'name': 'Rene', 'city': 'Sao Paulo' }, { 'name': 'Oscar', 'city': 'Zacatecas' }, { 'name': 'Daniel', 'city': 'Cancún' }, { 'name': 'Sergio', 'city': 'San Francisco' } ] | orderBy: 'city' | json}}
+        </div>
+        <hr/>
+        <div>{{ ['Lol', 'halo', 'mario', 'galaga', 'doom'] | filter: isCapitalized }}</div>
+        <div>Límite: {{ ['lol', 'halo', 'mario', 'galaga', 'doom'] | limitTo: 4 }}</div>
+        <div>Blancos: {{ '-13122' | blankIfNegative }}</div>
+        <div>Capitalizar: {{ 'esta es una cadena' | capitalize }}</div>
+        <hr/>
+        <hr/>
+
+		<h3 ng-init="age='21'">{{age}}</h3>
+
+		<div my-login user-name="wissar"></div>
+
+		<my-login></my-login>
+
+		<hr/>
+		
+		
+		
+		<hr/>
+
+		<!-- directive: my-login -->
+
+        <button ng-click="greeting()">Saludar</button>
+    </div>
+    Hola Mundo!
+    <div ng-controller="myClock">
+        <h4>{{clock.now | date:'sss'}}</h4>
+    </div>
+    <div ng-controller="ctrlCalc">
+        <input ng-model="num1" type="text" ng-change="showData()">
+        <input ng-model="num2" type="text">
+        <br/>
+        <button ng-click="multiplicacion()">*</button>
+        <button ng-click="division()">/</button>
+        <button ng-click="resta()">-</button>
+        <button ng-click="suma()" ng-disabled="true">+</button>
+        <h3>Resultado</h3>
+        <label>{{resultado}}</label>
+    </div>
+
+	<label>Estado de la selección: {{ selection }}</label>
+    <input type="checkbox" ng-model="selection" ng-init="selection = false" ng-checked="selection">
+</body>
+
+</html>
