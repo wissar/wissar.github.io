@@ -75,8 +75,7 @@ angular.module('myApp', ['ngRoute', 'formly'])
             templateOptions: {
                 type: 'text',
                 label: 'Nombre completo',
-                placeholder: 'Escribe tu nombre completo',
-                required: true
+                placeholder: 'Escribe tu nombre completo'
             }
         }];
     })
