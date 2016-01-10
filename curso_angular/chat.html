@@ -11,7 +11,7 @@
 	<div flex-container="row">
 		<div flex-item>
 			<lx-text-field label="Usuario" theme="dark" fixed-label="true" icon="account">
-				<input type="text" ng-model="user">
+				<input type="text" ng-model="user.name">
 			</lx-text-field>
 		</div>
 	</div>
@@ -23,6 +23,16 @@
 					{{ message.from}} : {{ message.body}}
 				</div>
 			</div>
+		</div>
+	</div>
+	<div flex-container="row">
+		<div flex-item>
+			<lx-text-field label="Mensaje" theme="dark" fixed-label="true" icon="message-draw">
+				<input type="text" ng-model="user.message">
+			</lx-text-field>
+		</div>
+		<div flex-item>
+			<button class="btn btn--s btn--blue btn--raiser" lx-ripple ng-click="sendMessage()">Enviar</button>
 		</div>
 	</div>
 	
