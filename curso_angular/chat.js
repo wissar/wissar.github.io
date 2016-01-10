@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['lumx'])
     .controller('ctrlChat', function($scope) {
 
     })

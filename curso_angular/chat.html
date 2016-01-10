@@ -15,6 +15,16 @@
 			</lx-text-field>
 		</div>
 	</div>
+	<div class="tc-white-1" flex-container="row">
+		<div flex-item="4" flex-item-order="1">
+			<span class="fs-tittle display-block mdi mdi-facebook-messenger">Mensajes</span>
+			<div class="mensajes p+ bgc-blue-grey-200">
+				<div ng-repeat="msg in mensajes.publicos">
+					{{ msg.from}} : {{ msg.body}}
+				</div>
+			</div>
+		</div>
+	</div>
 	
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
