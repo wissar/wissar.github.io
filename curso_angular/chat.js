@@ -1,5 +1,5 @@
 angular.module('myApp', ['lumx', 'firebase'])
-    .controller('ctrlChat', function($scope, $firebaseArray) {
+    .controller('ctrlChat', function($scope, $firebaseArray, LxNotificationService) {
         var ref = new Firebase('https://wissar-chat.firebaseio.com');
         $scope.messages = $firebaseArray(ref);
         console.log($scope.messages);
@@ -14,4 +14,11 @@ angular.module('myApp', ['lumx', 'firebase'])
             }
             $scope.user.message = '';
         }
+
+        $scope.messages.$watch(function(data){
+        	console.log(data);
+        	var message = $scope.messages.$getRecord(data.key);
+        	console.log(message.from);
+        	LxNotificationService.notify('Mensaje nuevo de: ' + message.from);
+        })
     })
